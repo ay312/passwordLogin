@@ -2,7 +2,8 @@ let username; // the person that logs in
 
 
 username=prompt("What is your username?","");
-if(!(isEscapeKeyPressed()){ // when the escape key is not pressed
+
+if(!(isEscapeKeyPressed())) { // when the escape key is not pressed
 	username=username.trim();
 	username=username.toLowerCase();
 
