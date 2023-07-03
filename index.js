@@ -2,16 +2,22 @@ let username; // the person that logs in
 
 
 username=prompt("What is your username?","");
-username=username.trim();
-username=username.toLowerCase();
+if(!(isEscapeKeyPressed()){ // when the escape key is not pressed
+	username=username.trim();
+	username=username.toLowerCase();
 
-if(username=="admin"){
-	askForPassword();
-}
-else{
-	alert("Failed Login Credentials!");
-}
+	if(username=="admin"){
+		askForPassword();
+	}
+	else{
+		alert("Failed Login Credentials!");
+	}
 
+	}
+
+else{ // when the escape key is pressed
+	alert("CANCELLED");
+}
 
 
 function askForPassword(){
@@ -28,4 +34,13 @@ function askForPassword(){
 	else{
 		alert("Wrong Password!");
 	}
+}
+
+
+function isEscapeKeyPressed(userInput){
+	/*Verifies if the user enters the escape key during prompt
+	returns true if escape key pressed , false otherwise
+	parameter is input string*/
+
+	return userInput==null; // the escape key value is null
 }
